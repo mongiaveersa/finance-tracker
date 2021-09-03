@@ -8,10 +8,10 @@ class StocksController < ApplicationController
             if @stock
                 render 'users/my_portfolio'
             else
-                flash[:alert]= "PLease enter a valid symbol"
+                flash[:alert]= "Please enter a valid symbol"
                 redirect_to my_portfolio_path
             end
-            
+
         else
             flash[:alert]= "Please enter a symbol"
             redirect_to my_portfolio_path

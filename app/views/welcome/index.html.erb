@@ -1,4 +1,12 @@
 <h1>Finance Tracker</h1>
 <p>Track your finances here and make sure you connect with your friends.</p>
+<% if !user_signed_in? %>
+    <%= link_to 'Sign in', user_session_path %>
+    
+<% else %>
 
-<%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+    <div class="button">
+        <%= link_to 'My portfolio', my_portfolio_path %>
+    </div>
+    <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+<% end %> 
